@@ -1,0 +1,12 @@
+steps:
+  - name: "node:10.16.3"
+    entrypoint: npm
+    args: ["install"]
+
+  - name: "node:10.16.3"
+    entrypoint: npm
+    args: ["run", "test"]
+
+  - name: "node:10.16.3"
+    entrypoint: npm
+    args: ["run", "lint"]
