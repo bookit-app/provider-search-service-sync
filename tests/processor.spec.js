@@ -8,7 +8,7 @@ const { expect } = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
-const { processor } = require('../src/processor');
+const processor = require('../src/processor');
 
 const data = {
   oldValue: {},

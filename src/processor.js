@@ -18,7 +18,7 @@ const logger = require('./logger');
  * @param {*} context
  * @returns {Promise<void>}
  */
-module.exports.processor = async (data, context, topic) => {
+module.exports = async (data, context, topic) => {
   const { params } = context;
 
   const notification = {
