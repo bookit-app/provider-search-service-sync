@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/bookit-app/service-offering-notification-publisher/badge.svg?branch=master)](https://coveralls.io/github/bookit-app/service-offering-notification-publisher?branch=master)
+
 # service-offering-notification-publisher
 
 Generates notifications to a PubSub topic when deltas are detected for Service Offerings of a Provider. This will allow services to be notified of changes so that they can make necessary adjustments to any dependent information.
@@ -24,11 +26,11 @@ This function hooks to the write event trigger raised by firestore. When the fun
 The function expects some information to be provided within the environment in order to function. The attributes are defined below:
 
 ```yaml
-pubsub-topic: "<NAME OF THE PUBSUB TOPIC>"
-app-log-level: "<DEFAULT LOG LEVEL>"
-NODE_ENV: "production"
+pubsub-topic: '<NAME OF THE PUBSUB TOPIC>'
+app-log-level: '<DEFAULT LOG LEVEL>'
+NODE_ENV: 'production'
 ```
 
 ## Deployment
 
-This is deployed on GCP as a Cloud Function linked to a firestore trigger. The deployment defined within the [cloudbuild.yaml](./cloudbuild.yaml). The deployment expects to find and encrypted file within this repository which contains the environment information that will be associated with the deployed function. The file is decrypted based on encryption keys managed in GCP KMS. The deployment process 
+This is deployed on GCP as a Cloud Function linked to a firestore trigger. The deployment defined within the [cloudbuild.yaml](./cloudbuild.yaml). The deployment expects to find and encrypted file within this repository which contains the environment information that will be associated with the deployed function. The file is decrypted based on encryption keys managed in GCP KMS. The deployment process
