@@ -1,0 +1,35 @@
+steps:
+  - name: "node:10.16.3"
+    entrypoint: npm
+    args: ["install"]
+
+  - name: "node:10.16.3"
+    entrypoint: npm
+    args: ["run", "test"]
+
+  - name: "node:10.16.3"
+    entrypoint: npm
+    args: ["run", "lint"]
+
+  - name: gcr.io/cloud-builders/gcloud
+    args:
+      - kms
+      - decrypt
+      - --ciphertext-file=gcloud-env.yaml.enc
+      - --plaintext-file=gcloud-env.yaml
+      - --location=global
+      - --keyring=build-ring
+      - --key=env-enc-key
+
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      - functions
+      - deploy
+      - service-offering-notification-publisher
+      - --source=.
+      - "--trigger-event=providers/cloud.firestore/eventTypes/document.write"
+      - "--trigger-resource=projects/sweng-581-capstone/databases/(default)/documents/ServiceProvider/{providerId}/services/{serviceId}"
+      - --runtime=nodejs10
+      - --region=us-central1
+      - --env-vars-file=gcloud-env.yaml
+      - --entry-point=publishNotification
