@@ -24,7 +24,7 @@ const data = {
       styleId: { stringValue: 'FADE' }
     },
     name:
-      'projects/sweng-581-capstone/databases/(default)/documents/ServiceProvider/10001/services/GxdeN1pB7KwE9VqNFnGn',
+      'projects/bookit-app-260021/databases/(default)/documents/ServiceProvider/10001/services/GxdeN1pB7KwE9VqNFnGn',
     updateTime: '2019-10-25T14:48:48.021215Z'
   }
 };
@@ -35,7 +35,7 @@ const context = {
   notSupported: {},
   params: { providerId: '10001', serviceId: 'GxdeN1pB7KwE9VqNFnGn' },
   resource:
-    'projects/sweng-581-capstone/databases/(default)/documents/ServiceProvider/10001/services/GxdeN1pB7KwE9VqNFnGn',
+    'projects/bookit-app-260021/databases/(default)/documents/ServiceProvider/10001/services/GxdeN1pB7KwE9VqNFnGn',
   timestamp: '2019-10-25T14:48:48.021215Z'
 };
 
@@ -86,7 +86,7 @@ describe('service-offering-notification-publisher: unit tests', () => {
           styleId: { stringValue: 'FADE' }
         },
         name:
-          'projects/sweng-581-capstone/databases/(default)/documents/ServiceProvider/10001/services/GxdeN1pB7KwE9VqNFnGn',
+          'projects/bookit-app-260021/databases/(default)/documents/ServiceProvider/10001/services/GxdeN1pB7KwE9VqNFnGn',
         updateTime: '2019-10-25T14:48:48.021215Z'
       },
       updateMask: {},

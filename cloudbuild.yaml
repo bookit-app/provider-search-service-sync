@@ -28,8 +28,8 @@ steps:
       - service-offering-notification-publisher
       - --source=.
       - "--trigger-event=providers/cloud.firestore/eventTypes/document.write"
-      - "--trigger-resource=projects/sweng-581-capstone/databases/(default)/documents/ServiceProvider/{providerId}/services/{serviceId}"
+      - "--trigger-resource=projects/bookit-app-260021/databases/(default)/documents/ServiceProvider/{providerId}/services/{serviceId}"
       - --runtime=nodejs10
-      - --region=us-central1
+      - --region=us-east1
       - --env-vars-file=gcloud-env.yaml
       - --entry-point=publishNotification
